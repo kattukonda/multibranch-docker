@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerhub') {
-                        sh 'docker push shaikmustafa/paytm:bank'
+                        sh 'docker push kattuprasanth/paytm:bank'
                     }
                 }
             }
@@ -24,7 +24,7 @@ pipeline {
         
         stage ("Deploy") {
             steps {
-                sh 'docker run -itd --name bank-app -p 1111:80 shaikmustafa/paytm:bank'
+                sh 'docker run -itd --name bank-app -p 1111:80 kattuprasanth/paytm:bank'
             }
         }
     }
